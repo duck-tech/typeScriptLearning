@@ -26,11 +26,11 @@ interface Admin {
     isAdmin: boolean
 }
 
-function isAdmin(account: User | Admin){
-    if ('isAdmin' in account) {
-        return account.isAdmin
-    } 
-}
+// function isAdmin(account: User | Admin){
+//     if ('isAdmin' in account) {
+//         return account.isAdmin
+//     } 
+// }
 
 // instance of narrowing: 當使用 instanceof 進行條件檢查時，如果對象是由右側提供的類（或其任何父類）實例化的，則運算符返回 true，否則返回 false。
 function logValue(x:Date | string) {
@@ -57,3 +57,43 @@ function getFood(pet: Fish | Bird) {
         return 'bird food '
     }
 }
+
+// discriminated Union and Exhaustiveness checking
+interface Circle {
+    kind: 'circle',
+    radius : number 
+  } 
+
+interface Square {
+    kind: 'square',
+    side: number
+  }
+
+interface Rectangle {
+    kind: 'rectangle',
+    length: number, 
+    width: number
+}
+
+type Shape = Circle | Square | Rectangle 
+
+// function getTrueShape(shape: Shape){
+//     if (shape.kind === 'circle') {
+//         return Math.PI * shape.radius ** 2
+//     }
+//     return shape.side * shape.side
+// }
+
+function getArea(shape: Shape) {
+    switch (shape.kind) {
+        case 'circle':
+            return Math.PI * shape.radius ** 2
+        case 'square':
+            return shape.side * shape.side
+        case 'rectangle':
+            return shape.length * shape.width
+        default: 
+            const _defaultforshape: never = shape
+            return _defaultforshape}
+}
+  

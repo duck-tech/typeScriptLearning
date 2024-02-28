@@ -10,8 +10,8 @@
 - interface and class
 - abstract class
 - generics
-- type Narrowing
-- 
+- type Narrowing (in, instanceof, Type Predicates)
+- Discriminated Union and Exhaustiveness checking
 
 ## setup environment
 
@@ -299,5 +299,80 @@ function isAdmin(account: User | Admin){
         return account.isAdmin
     } 
 }
+
+// instance of 
+// instance of narrowing: 當使用 instanceof 進行條件檢查時，如果對象是由右側提供的類（或其任何父類）實例化的，則運算符返回 true，否則返回 false。
+function logValue(x:Date | string) {
+    if (x instanceof Date) {
+        console.log(x.toUTCString())
+    } else {
+        console.log(x.toUpperCase())
+    }
+}
+
+type Fish = {swim: () => void }
+type Bird = {fly: () => void }
+
+function isFish(pet: Fish | Bird): pet is Fish {
+    return (pet as Fish).swim !== undefined
+}
+
+function getFood(pet: Fish | Bird) {
+    if (isFish(pet)) {
+        pet
+        return 'fish food'
+    } else {
+        pet 
+        return 'bird food '
+    }
+}
 ```
 
+## Discriminated Union and Exhaustiveness checking
+
+```typescript
+interface Circle {
+    kind: 'circle',
+    radius : number 
+  } 
+
+interface Square {
+    kind: 'square',
+    side: number
+  }
+
+interface Rectangle {
+    kind: 'rectangle',
+    length: number, 
+    width: number
+}
+
+type Shape = Circle | Square | Rectangle 
+
+// function getTrueShape(shape: Shape){
+//     if (shape.kind === 'circle') {
+//         return Math.PI * shape.radius ** 2
+//     }
+//     return shape.side * shape.side
+// }
+
+function getArea(shape: Shape) {
+    switch (shape.kind) {
+        case 'circle':
+            return Math.PI * shape.radius ** 2
+        case 'square':
+            return shape.side * shape.side
+        case 'rectangle':
+            return shape.length * shape.width
+        default: 
+            const _defaultforshape: never = shape
+            return _defaultforshape}
+}
+```
+
+Code Sample 
+[1. Class](./2_realproject/src/index.ts): class, private and public, getter and setter, protected 
+[2. interface class](./2_realproject/src/interface.ts)
+[3. abstract class](./2_realproject/src/abstractClass.ts)
+[4. generics](./2_realproject/src/generics.ts)
+[5. type Narrowing](./2_realproject/src/detection.ts): type Narrowing, Discriminated Union and Exhaustiveness checking
