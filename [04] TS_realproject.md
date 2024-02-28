@@ -370,8 +370,8 @@ function getArea(shape: Shape) {
 }
 ```
 
-Code Sample 
-[1. Class](./2_realproject/src/index.ts): class, private and public, getter and setter, protected 
+Code Sample
+[1. Class](./2_realproject/src/index.ts): class, private and public, getter and setter, protected
 [2. interface class](./2_realproject/src/interface.ts)
 [3. abstract class](./2_realproject/src/abstractClass.ts)
 [4. generics](./2_realproject/src/generics.ts)
