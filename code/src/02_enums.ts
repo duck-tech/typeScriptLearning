@@ -6,3 +6,14 @@
 const enum Size{ Small = 1, Medium, Large }
 let mySize: Size = Size.Medium 
 console.log(mySize)
+
+// Video2 : 限制用戶選擇
+
+const enum SeatChoice {
+    AISLE = 'aisle',
+    MIDDLE = 3,
+    WINDOW, 
+    FOURTH
+}
+
+const userSeat = SeatChoice.AISLE

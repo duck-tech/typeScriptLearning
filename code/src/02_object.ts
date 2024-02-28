@@ -18,3 +18,16 @@ let employee: {
         console.log(date);
     }
 }
+
+// Video 2
+
+const User = {
+    name: 'duck',
+    email: 'duck@mail.com',
+    isActive: true,
+}
+
+
+function createCourse():{name:string, price:number}{
+    return {name: 'reactjs', price:399}
+}

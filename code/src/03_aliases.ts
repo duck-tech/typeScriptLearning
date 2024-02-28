@@ -35,3 +35,60 @@ let employees : Employee = {
         console.log(date);
     }
 }
+
+// Video 2 Full TypeScript FreeCodeCamp Youtube
+/**
+ type User = {
+    name: string,
+    email: string,
+    isActive: boolean
+}
+
+function createUser(user: User): User{
+    return {name: '', email:'', isActive:true}
+}
+
+createUser({name: '', email:'', isActive:true})
+
+type Point = {
+    x: number,
+    y: number
+}
+
+function printCoord(pt: Point) {
+    console.log(`The coordinate's x value is ${pt.x}`)
+    console.log(`The coordinate's y value is ${pt.y}`) 
+}
+
+printCoord({x : 100, y: 100})
+**/
+
+type User = {
+    readonly _id: string,
+    name: string, 
+    email: string,
+    isActive: boolean
+    credcardDetails ?: number
+}
+
+let myUser: User = {
+    _id: '12456',
+    name: 'd',
+    email: 'd@mail.com',
+    isActive: false
+}
+
+myUser.email = 'd@gmail.com'
+// myUser._id = 123
+
+type cardNumber = {
+    cardnumber: string,
+}
+
+type cardDate = {
+    cardData: string
+}
+
+type cardDetails = cardNumber & cardDate & {
+    cvv:number
+}

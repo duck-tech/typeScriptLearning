@@ -8,3 +8,28 @@ function kgToLbs(weight: number | string): number {
 
 kgToLbs(10)
 kgToLbs('10kg')
+
+// Video 2 
+let score: number | string  = 33
+score = 44
+score = '55'
+
+type MUser = {
+    name: string, 
+    id:number
+}
+
+type Admin = {
+    username: string, 
+    id:number
+}
+
+let kelly: MUser | Admin = {
+    name: 'kelly',
+    id: 334,
+}
+
+kelly = {username: 'duck', id: 334}
+
+// array 
+const data: (string | number)[] = [1,2,3,4,'5']    

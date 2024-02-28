@@ -9,11 +9,14 @@
 let sales = 123_456_789;
 let course = 'TypeScript';
 let is_published = true;
+
+// any 
 let level; // 這裡的 level 是 any 型別, 也就是說可以是任何型別
 level = 1;
 level = 'a';
 
-// 這裡的 document 是 any 型別
-// function render(document: any){
-//     console.log(document);
+// let hero: string
+// function getHeto() {
+//     return true
 // }
+// hero = getHeto() 
