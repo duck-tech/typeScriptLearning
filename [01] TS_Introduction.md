@@ -1,10 +1,12 @@
 # TypeScript Introduction
 
 這是一個紀錄TypeScript學習的文檔。
+[TypeScript Document](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
 
 ## Outline
 
 - Introduction to TypeScript
+- TypeScript Syntax
 - Setting up the development environment
 - Creating your first TypeScript program
 - Configuring the TypeSCript Compiler
@@ -13,10 +15,10 @@
 ## Introduction to TypeScript
 
 1. What is TypeScript?
-A Programming language to address shortcomings of JavaScript.
+A Programming language to address shortcomings of JavaScript.It's a development tool. Your project still runs JS.
 
 2. TypeScript Benefits:
-   - Static Typing -> Type Checking
+   - Static Typing -> Type Checking e.g. JAVA, GoLang
    - Code Completion
    - Refactoring
    - Shorthand notations -> Less code
@@ -32,6 +34,12 @@ A Programming language to address shortcomings of JavaScript.
 `npm install -g typescript`
 `tsc -v`
 
+## TypeScript Syntax
+
+```typescript
+let variableName: type = value;
+```
+
 ## Creating your first TypeScript program
 
 Make a directory `code` and create a file `01_hello.ts` in it.
@@ -42,7 +50,7 @@ mkdir code
 
 code sample:
 
-- [hello](./code/src/hello.ts): A sample for hello world in TypeScript
+- [hello](./code/src/01_hello.ts): A sample for hello world in TypeScript
 
 ## Configuring the TypeScript Compiler
 
